@@ -10,11 +10,14 @@ module.exports = {
   ],
   overrides: [],
   parserOptions: {
+    ecmaFeatures: {
+      jsx: true
+    },
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
   plugins: ['react'],
   rules: {
-    'react/prop-types': '0'
+    'react/prop-types': 'off'
   },
 }
