@@ -1,10 +1,23 @@
 import './ListaSuspensa.css'
 
-const ListaSuspensa = ({ label, itens }) => {
+const ListaSuspensa = ({
+  name,
+  label,
+  itens,
+  obrigatorio,
+  valor, 
+  targetValue,
+}) => {
   return (
-    <div className='ListaSuspensa'>
-      <label htmlFor=''> {label} </label>
-      <select name='' id=''>
+    <div className='lista-suspensa'>
+      <label htmlFor={name}> {label} </label>
+      <select
+        value={valor}
+        onChange={(e) => targetValue(e.target.value)}
+        required={obrigatorio}
+        name={name}
+        id={name}
+      >
         {itens.map((item) => (
           <option key={item}> {item} </option>
         ))}

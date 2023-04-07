@@ -1,10 +1,29 @@
 import './CampoTexto.css'
 
-const CampoTexto = ({ label, placeholder }) => {
+const CampoTexto = ({
+  name,
+  label,
+  placeholder,
+  obrigatorio,
+  valor,
+  targetValue,
+}) => {
+  const handleChange = (e) => {
+    targetValue(e.target.value)
+  }
+
   return (
     <div className='campo-texto'>
-      <label htmlFor='nome'>{label}</label>
-      <input type='text' name='nome' id='nome' placeholder={placeholder} />
+      <label htmlFor={name}>{label}</label>
+      <input
+        onChange={handleChange}
+        value={valor}
+        required={obrigatorio}
+        type='text'
+        name={name}
+        id={name}
+        placeholder={placeholder}
+      />
     </div>
   )
 }
