@@ -3,12 +3,12 @@ import Botao from '../Botao'
 import CampoTexto from '../CampoTexto'
 import ListaSuspensa from '../ListaSuspensa'
 import './Formulario.css'
-const Formulario = () => {
+const Formulario = ({ colaborador }) => {
   const [nome, setNome] = useState('')
   const [cargo, setCargo] = useState('')
   const [imagem, setImagem] = useState('')
   const [time, setTime] = useState('')
-  
+
   const times = [
     'Programação',
     'Front-End',
@@ -21,10 +21,16 @@ const Formulario = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    colaborador({
+      nome,
+      cargo,
+      imagem,
+      time,
+    })
     setNome('')
     setCargo('')
     setImagem('')
-    console.log('Form enviado ====>', nome, cargo, imagem, time)
+    // console.log('Form enviado ====>', nome, cargo, imagem, time)
   }
   return (
     <section className='formulario'>
