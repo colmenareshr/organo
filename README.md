@@ -9,8 +9,8 @@ Sigue estos pasos:
 2. Ejecuta el siguiente comando para crear un nuevo proyecto con Vite: npm create vite@latest organo
 3. Elige React como el framework que vas a utilizar y si quieres usar TypeScript o no.
 4. Accede al directorio del proyecto: cd organo
-5. Instala las dependencias: npm install
-6. Ejecuta el comando de desarrollo: npm run dev
+5. Instala las dependencias: pnpm install
+6. Ejecuta el comando de desarrollo: pnpm run dev
 
 Ya puedes empezar a trabajar en tu aplicación Organo con React y Vite.
 
