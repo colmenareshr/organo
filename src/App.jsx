@@ -45,6 +45,7 @@ function App() {
   ]
 
   const colaboradorAdicionado = (colaborador) => {
+    
     setColaboradores([...colaboradores, colaborador])
   }
   return (

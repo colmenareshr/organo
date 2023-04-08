@@ -21,7 +21,7 @@ const Formulario = ({ colaborador, times }) => {
     setNome('')
     setCargo('')
     setImagem('')
-    // console.log('Form enviado ====>', nome, cargo, imagem, time)
+    setTime('')
   }
   return (
     <section className='formulario'>

@@ -18,6 +18,7 @@ const ListaSuspensa = ({
         name={name}
         id={name}
       >
+        <option value=""></option>
         {itens.map((item) => (
           <option key={item}> {item} </option>
         ))}
