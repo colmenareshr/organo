@@ -6,7 +6,7 @@ import Time from './components/Time/indes'
 function App() {
   const [colaboradores, setColaboradores] = useState([])
 
-  const times = [
+  const [times, setTimes] = useState([
     {
       nome: 'Programação',
       corPrimaria: '#57c278',
@@ -42,11 +42,14 @@ function App() {
       corPrimaria: '#FF8A29',
       corSecundaria: '#FFEEDF',
     },
-  ]
+  ])
 
   const colaboradorAdicionado = (colaborador) => {
-    
     setColaboradores([...colaboradores, colaborador])
+  }
+
+  const deletarColaborador = () => {
+    console.log('colaborador deletado')
   }
   return (
     <div className='App'>
@@ -55,15 +58,16 @@ function App() {
         times={times.map((time) => time.nome)}
         colaborador={(colaborador) => colaboradorAdicionado(colaborador)}
       />
-      {times.map((time) => (
+      {times.map((time, index) => (
         <Time
-          key={time.nome}
+          key={index}
           nome={time.nome}
           corPrimaria={time.corPrimaria}
           corSecundaria={time.corSecundaria}
           colaboradores={colaboradores.filter(
             (colaborador) => colaborador.time === time.nome
           )}
+          aoDeletar={deletarColaborador}
         />
       ))}
     </div>
